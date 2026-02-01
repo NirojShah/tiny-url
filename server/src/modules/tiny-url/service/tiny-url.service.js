@@ -12,6 +12,17 @@ const generateHashLInk = (url) => {
 const processCreateUrl = async (url) => {
   try {
     const resp = generateHashLInk(url);
+    const alreadyExists = await tinyUrl.findOne({
+      originalUrl: url,
+    });
+
+    if (alreadyExists) {
+      return {
+        success: true,
+        message: "already exists",
+        shortUrl: alreadyExists.shortUrl,
+      };
+    }
     const createNew = await tinyUrl.create({
       originalUrl: url,
       shortUrl: resp,
