@@ -5,6 +5,7 @@ const envSelector = () => {
   let file;
   switch (env) {
     case "production":
+      console.log("production")
       file = ".env.production";
     case "test":
       file = ".env";
