@@ -21,7 +21,7 @@ const redirectUrl = asyncErrorHandler(async (req, res) => {
   const { shortUrl } = req.params;
   const resp = await processRedirect(shortUrl);
   if (resp.success) {
-    res.redirect(resp.url);
+    return res.redirect(resp.url);
   }
   throw new CustomError(500, "Url not found.");
 });
