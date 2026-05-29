@@ -19,7 +19,7 @@ A simple URL shortener service that converts long URLs into short, shareable lin
 3. The long URL is stored in the database with the short code.
 4. When the short URL is accessed, the service redirects to the original URL.
 
-Example:
+## Example:
 
 **Long URL**
 https://www.example.com/blog/how-to-build-a-url-shortener
